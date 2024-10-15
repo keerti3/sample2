@@ -1,0 +1,657 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap');
+@import './variables.css';
+@import './utilities.css';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--pure);
+    background: var(--primary);
+}
+
+
+header {
+    background: linear-gradient(135deg, rgba(0,0,0,1),rgba(0,0,0,0.2)),
+    url('../img/ocean.jpg');
+    min-height: 100vh;
+    background-size: cover;
+}
+
+.typewriter{
+
+    overflow: hidden; /* Hides the text that overflows the container */
+    /* Prevents the text from wrapping */
+    border-right: 3px solid #000; /* Creates a blinking cursor */
+    animation: typing 10s steps(25) infinite; /* Animation settings */
+  }
+  
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 70%; /* Reveals the entire text */
+    }
+  }
+
+header nav {
+    padding: 20px 40px 20px 100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    border-bottom: 1px solid var(--gray);
+}
+
+header nav .nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header nav .nav-right a {
+    text-decoration: none;
+    color: var(--pure);
+    margin-right: 20px;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+header nav .nav-right a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    width: 0;
+    height: 2px;
+    background: var(--pure);
+    transition: width .3s ease-in-out;
+}
+
+header nav .nav-right a:hover:after {
+    width: 70%;
+}
+
+header nav .nav-right a.active:after {
+    width: 70%;
+}
+
+header nav .nav-right .search > div {
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+header nav .nav-right .search > div input {
+    background: transparent;
+    border: none;
+    outline:none;
+    font-size: 16px;
+    color: #fff;
+}
+
+header nav .nav-right .search > div img {
+    padding-right: 16px;
+}
+
+.social div {
+    border: 2px solid var(--pure);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    opacity: 0;
+}
+
+@keyframes moveIn {
+    from {
+        transform: translateX(-100px);
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.social svg path {
+  fill: var(--pure);  
+}
+
+.social div:hover svg path {
+    fill: var(--dark);
+    transition: all .5s ease-in-out;
+}
+
+.social div:hover {
+    background: var(--pure);
+}
+
+.hero {
+    position: relative;
+}
+.social {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-right: 1px solid var(--gray);
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+.hero .cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 80px);
+}
+
+.hero .cta h1 {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.hero .cta > div {
+    flex: 1;
+}
+
+.hero .cta .left-section {
+    padding: 0 40px 0 20px;
+    flex:6;
+    animation: typing 4s steps(20) infinite;
+}
+
+@keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 80%; /* Reveals the entire text */
+    }
+  }
+
+.hero .cta .right-section img {
+    flex:1;
+    height: 70vh;
+    transform: rotate(20deg);
+    animation: moveInSpace 12s ease-in-out infinite alternate;
+}
+
+@keyframes moveInSpace {
+    50% {
+       transform: translateY(100px) rotate(-30deg) scale(0.8); 
+    }
+}
+
+section.strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--dark);
+    padding: 50px 0;
+}
+
+section.rocket {
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+    grid-gap: 80px;
+    padding: 100px 0;
+}
+
+section.rocket .rocket-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.rocket .rocket-body span {
+    font-size: 0;
+    position: relative;
+}
+
+section.rocket .rocket-body span img {
+    width: 100%;
+}
+
+section.rocket .block {
+    width: 70%;
+}
+
+section.rocket .block h1 {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+section.rocket .block .with-underline {
+    position: relative;
+    margin-bottom: 38px;
+}
+
+section.rocket .block .with-underline:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    display: block;
+    width: 38%;
+    height: 2px;
+    background: var(--pure);
+}
+
+section.rocket .block h1.with-underline:before {
+    width: 20%;
+}
+
+section.rocket p {
+    line-height: 1.6;
+}
+
+section.rocket .block h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+section.rocket .block.payload {
+    padding-top: 130px;
+}
+
+section.rocket .block.payload h2 {
+    padding-left: 80px;
+}
+
+section.rocket .block.dragon {
+    padding-top: 120px;
+}
+
+section.rocket .block button {
+    margin-top: 30px;
+}
+
+section.rocket .block.composite {
+    padding-top: 60px;
+}
+
+section.rocket .block.first-stage {
+    padding-top: 60px;
+}
+
+section.rocket .block.capacity {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+}
+
+section.rocket .block.capacity > div:first-child {
+    margin-right: 40px;
+}
+
+section.rocket .block.capacity h4 {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+section.rocket .block.capacity h6 {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+section.rocket .block.capacity h6 small {
+    font-size: 12px;
+}
+
+section.rocket .block.second-stage {
+    padding-top: 60px;
+}
+
+section.rocket .right-block .block.capacity {
+    padding-top: 120px;
+}
+
+section.rocket .right-block .block.capacity.single {
+    padding-top: 40px;
+}
+
+section.rocket .right-block .block.engines {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+section.rocket .right-block .block.engines img {
+    width: 180px;
+}
+
+section.rocket .right-block .block.marine {
+    padding-top: 100px;
+    width: 70%;
+}
+
+section.rocket .right-block .block.marine h2 {
+    font-size: 14px;
+    padding-left: 100px;
+    margin-bottom: 26px;
+}
+
+section.rocket .right-block .floating-graphics {
+    position: sticky;
+    float: right;
+    top: 60px;
+    margin-right: -80px;
+}
+
+section.rocket .right-block .floating-graphics img {
+    height: 350px;
+}
+
+section.rocket .rocket-body span:after, section.rocket .rocket-body span:nth-child(3):before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--pure);
+    transition: width 1s ease-in-out;
+}
+
+section.rocket .rocket-body span:nth-child(1):after {
+    bottom: 16px;
+    left: 96%;
+}
+
+section.rocket .rocket-body span:nth-child(2):after {
+    bottom: 62%;
+    right: 100%;
+}
+
+section.rocket .rocket-body span:nth-child(3):after {
+    bottom: 64%;
+    right: 90%;
+}
+
+section.rocket .rocket-body span:nth-child(3):before {
+    bottom: 36%;
+    left: 90%;
+}
+
+section.rocket .rocket-body span.active:nth-child(1):after {
+    width: 120px;
+}
+
+section.rocket .rocket-body span.active:nth-child(2):after {
+    width: 180px;
+}
+
+section.rocket .rocket-body span.active:nth-child(3):after {
+    width: 200px;
+}
+
+section.rocket .rocket-body span.active:nth-child(3):before {
+    width: 160px;
+}
+
+@keyframes jump {
+    50% {
+        transform: translateY(-50px);
+    }
+}
+
+section.rocket .rocket-body span.active:nth-child(1) {
+    animation: jump 1s ease-in-out forwards;
+}
+
+footer {
+    background: var(--dark);
+    padding: 60px 0;
+}
+
+footer > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+ }
+
+ footer .copyright span {
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+footer .copyright img {
+    height: 30px;
+}
+
+footer h1 {
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+footer h1:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--pure);
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer ul li:nth-child(even) {
+    margin: 10px 0;
+ }
+
+ footer ul li a {
+    color: var(--mild);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all .3s ease-in-out;
+}
+
+footer ul li a:hover {
+    color: var(--pure);
+ }
+
+ footer .footer-socials a {
+    margin-right: 20px;
+    font-size: 22px;
+    color: var(--mild);
+}
+
+footer .footer-socials a:hover {
+    color: var(--pure);
+}
+
+
+
+.container {
+    display: flex;
+    height: 70vh; /* 70% of the viewport height */
+}
+
+.box {
+    flex: 1;
+    height: 70%;
+    width: 50%; /* 70% of the viewport width */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #999; /* Border color */
+    border-radius: 10px; /* Border radius */
+    margin: 10px 30px;
+}
+
+.box1 {
+    background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BjN3lkMGZid3BzOGx6c2N6NWIxOXVhbmduanVzOHR0OHJ1Y2FyYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/86bAGxmMCGQU34Y/giphy.gif');
+}
+
+.box2 {
+    background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWc1MGg1cm1iZ3BydTRqNmh5cm52YWI3Ymx0YTNoODV1aHNqbjZ0NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KN1N613Lm99KU7Btgb/giphy.gif');
+}
+
+.content {
+    position: absolute;
+    bottom: 2%; /* Align to the bottom with some space */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px; /* Increase button size */
+    background-color: transparent; /* Set button background to transparent */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px; /* Slightly larger border radius */
+    font-size: 18px; /* Increase font size */
+    margin: 10px;
+    border: 2px solid #fff; /* Add border */
+    transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white on hover */
+}
+
+.rocket-animations {
+    width: 100px;
+    height: 50px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/e/e8/Fish_orange_blue_stripe.png') no-repeat;
+    background-size: contain;
+    animation: launchRocket 2s ease-in-out infinite;
+}
+
+@keyframes launchRocket {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateX(100px) translateY(100px) rotate(60deg);
+    }
+    75% {
+        transform: translateY(200px) rotate(75deg);
+    }
+    100% {
+        
+        opacity: none;
+    }
+}
+
+
+.form-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 1px;
+    width: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: -42vw -4vh 0px 0px #fff,25vw -41vh 0px 0px #fff,-20vw 49vh 0px 1px #fff,5vw 40vh 1px 1px #fff,29vw 19vh 1px 0px #fff,-44vw -13vh 0px 0px #fff,46vw 41vh 0px 1px #fff,-3vw -45vh 0px 1px #fff,47vw 35vh 1px 0px #fff,12vw -8vh 1px 0px #fff,-34vw 48vh 1px 1px #fff,32vw 26vh 1px 1px #fff,32vw -41vh 1px 1px #fff,0vw 37vh 1px 1px #fff,34vw -26vh 1px 0px #fff,-14vw -49vh 1px 0px #fff,-12vw 45vh 0px 1px #fff,-44vw -33vh 0px 1px #fff,-13vw 41vh 0px 0px #fff,-36vw -11vh 0px 1px #fff,-23vw -24vh 1px 0px #fff,-38vw -27vh 0px 1px #fff,16vw -19vh 0px 0px #fff,28vw 33vh 1px 0px #fff,-49vw -4vh 0px 0px #fff,16vw 32vh 0px 1px #fff,36vw -18vh 1px 0px #fff,-25vw -30vh 1px 0px #fff,-23vw 24vh 0px 1px #fff,-2vw -35vh 1px 1px #fff,-25vw 9vh 0px 0px #fff,-15vw -34vh 0px 0px #fff,-8vw -19vh 1px 0px #fff,-20vw -20vh 1px 1px #fff,42vw 50vh 0px 1px #fff,-32vw 10vh 1px 0px #fff,-23vw -17vh 0px 0px #fff,44vw 15vh 1px 0px #fff,-40vw 33vh 1px 1px #fff,-43vw 8vh 0px 0px #fff,-48vw -15vh 1px 1px #fff,-24vw 17vh 0px 0px #fff,-31vw 50vh 1px 0px #fff,36vw -38vh 0px 1px #fff,-7vw 48vh 0px 0px #fff,15vw -32vh 0px 0px #fff,29vw -41vh 0px 0px #fff,2vw 37vh 1px 0px #fff,7vw -40vh 1px 1px #fff,15vw 18vh 0px 0px #fff,25vw -13vh 1px 1px #fff,-46vw -12vh 1px 1px #fff,-18vw 22vh 0px 0px #fff,23vw -9vh 1px 0px #fff,50vw 12vh 0px 1px #fff,45vw 2vh 0px 0px #fff,14vw -48vh 1px 0px #fff,23vw 43vh 0px 1px #fff,-40vw 16vh 1px 1px #fff,20vw -31vh 0px 1px #fff,-17vw 44vh 1px 1px #fff,18vw -45vh 0px 0px #fff,33vw -6vh 0px 0px #fff,0vw 7vh 0px 1px #fff,-10vw -18vh 0px 1px #fff,-19vw 5vh 1px 0px #fff,1vw 42vh 0px 0px #fff,22vw 48vh 0px 1px #fff,39vw -8vh 1px 1px #fff,-6vw -42vh 1px 0px #fff,-47vw 34vh 0px 0px #fff,-46vw 19vh 0px 1px #fff,-12vw -32vh 0px 0px #fff,-45vw -38vh 0px 1px #fff,-28vw 18vh 1px 0px #fff,-38vw -46vh 1px 1px #fff,49vw -6vh 1px 1px #fff,-28vw 18vh 1px 1px #fff,10vw -24vh 0px 1px #fff,-5vw -11vh 1px 1px #fff,33vw -8vh 1px 0px #fff,-16vw 17vh 0px 0px #fff,18vw 27vh 0px 1px #fff,-8vw -10vh 1px 1px #fff;
+  
+  /* stars were too big with the layers above but left the code in case no one cares  -- as in, if noone's just that  one other loner who actually cares    */
+  
+  box-shadow: 24vw 9vh 1px 0px #fff,12vw -24vh 0px 1px #fff,-45vw -22vh 0px 0px #fff,-37vw -40vh 0px 1px #fff,29vw 19vh 0px 1px #fff,4vw -8vh 0px 1px #fff,-5vw 21vh 1px 1px #fff,-27vw 26vh 1px 1px #fff,-47vw -3vh 1px 1px #fff,-28vw -30vh 0px 1px #fff,-43vw -27vh 0px 1px #fff,4vw 22vh 1px 1px #fff,36vw 23vh 0px 0px #fff,-21vw 24vh 1px 1px #fff,-16vw 2vh 1px 0px #fff,-16vw -6vh 0px 0px #fff,5vw 26vh 0px 0px #fff,-34vw 41vh 0px 0px #fff,1vw 42vh 1px 1px #fff,11vw -13vh 1px 1px #fff,48vw -8vh 1px 0px #fff,22vw -15vh 0px 0px #fff,45vw 49vh 0px 0px #fff,43vw -27vh 1px 1px #fff,20vw -2vh 0px 0px #fff,8vw 22vh 0px 1px #fff,39vw 48vh 1px 1px #fff,-21vw -11vh 0px 1px #fff,-40vw 45vh 0px 1px #fff,11vw -30vh 1px 0px #fff,26vw 30vh 1px 0px #fff,45vw -29vh 0px 1px #fff,-2vw 18vh 0px 0px #fff,-29vw -45vh 1px 0px #fff,-7vw -27vh 1px 1px #fff,42vw 24vh 0px 0px #fff,45vw -48vh 1px 0px #fff,-36vw -18vh 0px 0px #fff,-44vw 13vh 0px 1px #fff,36vw 16vh 0px 1px #fff,40vw 24vh 0px 0px #fff,18vw 11vh 0px 0px #fff,-15vw -23vh 1px 0px #fff,-24vw 48vh 0px 1px #fff,27vw -45vh 1px 0px #fff,-2vw -24vh 0px 1px #fff,-15vw -28vh 0px 0px #fff,-43vw 13vh 1px 0px #fff,7vw 27vh 1px 0px #fff,47vw 5vh 0px 0px #fff,-45vw 15vh 1px 1px #fff,-5vw -28vh 0px 1px #fff,38vw 25vh 1px 1px #fff,-39vw -1vh 1px 0px #fff,5vw 0vh 1px 0px #fff,49vw 13vh 0px 0px #fff,48vw 10vh 0px 1px #fff,19vw -28vh 0px 0px #fff,4vw 7vh 0px 0px #fff,21vw 21vh 1px 1px #fff,-15vw -15vh 0px 1px #fff,-6vw -42vh 1px 0px #fff,-15vw 48vh 1px 1px #fff,-23vw 25vh 1px 1px #fff,-48vw 25vh 0px 1px #fff,-31vw -19vh 0px 1px #fff,4vw 37vh 1px 1px #fff,-43vw 28vh 0px 0px #fff,3vw -25vh 0px 1px #fff,-39vw 14vh 0px 1px #fff,-40vw 31vh 0px 1px #fff,35vw -36vh 1px 1px #fff,16vw 49vh 0px 0px #fff,6vw 39vh 0px 0px #fff,3vw -35vh 0px 1px #fff,-44vw -2vh 1px 0px #fff,-6vw 21vh 1px 0px #fff,48vw 9vh 1px 1px #fff,-43vw 30vh 1px 1px #fff,29vw -12vh 1px 1px #fff,-48vw 13vh 1px 0px #fff,-42vw 32vh 1px 1px #fff,34vw 15vh 1px 1px #fff,29vw -37vh 1px 1px #fff,28vw 2vh 0px 0px #fff;
+  animation: zoom 16s alternate infinite; 
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(2);
+    }
+}
+
+
+.form-container {
+    color: #fff; /* Text color set to white */
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-container input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+/* CSS for the button */
+.form-container button {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    color: var(--dark);
+    border-radius: 50px;
+    background: var(--pure);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+.form-container button:hover {
+    background: transparent;
+    color: var(--pure);
+    border-color: var(--pure);
+}
+
+.header-rocketry {
+    min-height: 100vh;
+    background-size: cover;
+}
+.fish-animations {
+    position: absolute;
+    width: 60px; /* Size of the fish */
+    height: 40px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a0/Cartoon_fish_yellow.png'); /* Use a fish image or sprite */
+    background-size: cover;
+    animation: fishSwim 8s infinite ease-in-out;
+}
+
+@keyframes fishSwim {
+    0% {
+        left: -100px; /* Start off-screen to the left */
+        bottom: 20px;
+        transform: rotate(0deg) scaleX(1); /* Fish facing right */
+    }
+    50% {
+        left: 50%;
+        bottom: 120px; /* Swim upwards */
+        transform: rotate(15deg);
+    }
+    100% {
+        left: 110%; /* Swim off-screen to the right */
+        bottom: 20px;
+        transform: rotate(0deg) scaleX(1); /* Back to normal position */
+    }

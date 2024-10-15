@@ -1,0 +1,56 @@
+body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    perspective: 1000px;
+}
+
+.venus-info {
+    display: flex;
+    justify-content: space-between; /* Place image and text on the same page with space in between */
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%; /* Use the full width of the viewport */
+    max-width: 100%; /* Ensure content fits within the viewport */
+    position: relative;
+}
+
+.venus-image {
+    max-width: 30%; /* Adjust image size to be smaller */
+    height: auto;
+    transform: rotate(0deg);
+    animation: rotate-2d 10s linear infinite;
+}
+
+.venus-text {
+    flex: 1; /* Take up available space */
+    padding: 20px; /* Add padding to separate text from image */
+    color: #fff;
+    text-align: right; /* Align text to the right */
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0;
+    color: #fff;
+}
+
+p {
+    font-size: 1rem;
+    margin: 0;
+    color: #fff;
+}
+
+@keyframes rotate-2d {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

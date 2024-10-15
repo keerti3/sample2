@@ -1,0 +1,90 @@
+body {
+    background: #000;
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.neptune-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.neptune-text {
+    width: 40%;
+    max-width: 400px;
+    padding: 20px;
+    opacity: 0;
+    animation: text-fade-in 500ms ease-in-out 500ms forwards, slide-in 500ms ease-in-out 500ms forwards;
+    transform: translateY(-100%);
+    transition: opacity 1s ease-in-out;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.neptune-text:hover {
+    opacity: 0.9;
+}
+
+.neptune-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    animation: rotate-slow 60s linear infinite; /* Slower and more noticeable rotation effect */
+}
+
+img {
+    max-width: 100%; /* Increase image size to 100% of the viewport width */
+    max-height: 100vh; /* Increase image size to 100% of the viewport height */
+    object-fit: contain;
+    transition: transform 1s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+@keyframes text-fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate-slow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Full rotation effect */
+    }
+}

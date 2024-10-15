@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    .image-box {
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .fact-box {
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+      opacity: 0;
+      animation: fadeIn 3s forwards;
+    }
+
+    .card {
+      background-color: #333;
+      border: 1px solid #555;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .card h2 {
+      color: #ffaa00;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .sun {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #ffdb58 20%, #ffcc00 70%, #ffaa00 100%);
+      border-radius: 50%;
+      position: absolute;
+      top: -50px; /* Initial position from the top */
+      right: 50px; /* Initial position from the right */
+      animation: moveSun 10s linear infinite, spin 5s linear infinite, pulse 2s ease-in-out infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      text-shadow: 0 0 10px #ffaa00, 0 0 20px #ffaa00, 0 0 30px #ffaa00;
+      box-shadow: 0 0 20px #ffaa00, 0 0 40px #ffaa00, 0 0 60px #ffaa00;
+    }
+
+    @keyframes moveSun {
+      0%, 100% {
+        top: -50px;
+        right: 50px;
+      }
+      50% {
+        top: 100vh; /* Move to the bottom */
+        right: 50px;
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../css/star-background.css">
+  <title>The Sun</title>
+</head>
+<body>
+    <div class="form-background"></div>
+  <div class="image-box">
+    <img src="https://media2.giphy.com/media/APq0WQXgQQrKFcBbjP/giphy.gif?cid=ecf05e472i77jtngn9mbdbikxuf4yyj5awiurn1mhewrr6q0&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Sun Animation">
+  </div>
+  <div class="fact-box">
+    <div class="card">
+      <h2>The Sun</h2>
+      <p>
+        The Sun is the star at the center of our solar system. It provides light, heat, and energy essential for life on Earth.
+        It is a massive ball of hot, glowing gases, primarily hydrogen and helium.
+      </p>
+    </div>
+    <div class="card">
+      <h2>Interesting Facts</h2>
+      <ul>
+        <li>The Sun is about 4.6 billion years old.</li>
+        <li>It is mostly composed of hydrogen (about 74%) and helium (about 24%).</li>
+        <li>The Sun's diameter is about 109 times that of Earth.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Importance</h2>
+      <p>
+        The Sun is the primary source of energy in the solar system. It plays a crucial role in sustaining life on Earth and influencing the climate of all the planets.
+      </p>
+    </div>
+  </div>
+
+  <div class="sun">SUN</div>
+
+</body>
+</html>

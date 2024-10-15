@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .rocket-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .rocket {
+      width: 50px;
+      height: 100px;
+      background-color: #3498db;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-100%);
+      animation: moveRocket 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes moveRocket {
+      0% {
+        transform: translateX(-50%) translateY(100);
+      }
+      100% {
+        transform: translateX(-50%) translateY(-739px);
+      }
+    }
+  </style>
+  <title>Animated Rocket</title>
+</head>
+<body>
+  <div class="rocket-container">
+    <div class="rocket">
+        <img width="50px" height="100px" src="https://as2.ftcdn.net/v2/jpg/01/89/06/45/1000_F_189064559_4XZ5t1v1Q9E1xHv1xZHGJySGKp66SBJM.jpg" alt="rocket"/>
+    </div>
+  </div>
+</body>
+</html>
