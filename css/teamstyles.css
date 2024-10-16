@@ -115,29 +115,39 @@ header nav .nav-right .search > div img {
     padding: 40px 40px;
 }
 
-.team{
+.team {
     display: flex;
-    padding-left: 100px;
-    padding-top: 100px;
-    gap: 20px; 
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    gap: 150px; /* Reduced spacing between cards */
 }
 
+
 .team-member {
-    margin: 20px;
+    display: flex;
+    justify-content: center;
     flex: 1;
+    margin-right: -5px;
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 350px;
     height: 410px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     overflow: hidden;
-    position: relative;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    
 }
+
 
 .card:hover {
     transform: scale(1.05);

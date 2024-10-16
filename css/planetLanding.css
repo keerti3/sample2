@@ -82,3 +82,18 @@ animation: zoom 16s alternate infinite;
       transform: translateX(-100%) translateY(-800px);
     }
   }
+
+  .creature-button {
+    background-color: #007bff; /* Blue color */
+    color: white; /* White text */
+    font-size: 1.2em; /* Make the button text bigger */
+    padding: 10px 20px; /* Increase padding for larger button size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.creature-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
