@@ -35,15 +35,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
-    height: 100%;
+    padding: 5px;
+    height: 50%;
     transform-style: preserve-3d;
     animation: rotate-3d 10s linear infinite;
 }
 
 img {
     float: right;
-    width: 50%; /* Image now fits the entire width of the screen */
+    width: 60%; /* Image now fits the entire width of the screen */
     height: 80vh; /* Image now fits the entire height of the screen */
     object-fit: cover; /* Maintain aspect ratio and cover the entire viewport */
 }
