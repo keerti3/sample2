@@ -45,7 +45,7 @@ body {
 }
 
 .earth-image {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/The_Blue_Marble_%28remastered%29.jpg/1920px-The_Blue_Marble_%28remastered%29.jpg');
+    background-image: url('../img/eels_Removed.png');
     background-size: cover;
     background-color: transparent;
     width: 100%; /* Make the image fill the container */
