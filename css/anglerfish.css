@@ -1,0 +1,70 @@
+body {
+    background: #000;
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.mars-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.mars-text {
+    width: 40%;
+    max-width: 400px;
+    padding: 20px;
+    opacity: 0;
+    animation: text-slide-in 1s ease-in-out 1s forwards;
+    transform: translateY(-100%);
+}
+
+.mars-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform: rotate(5deg); /* Rotate the image slightly */
+}
+
+img {
+    max-width: 70%;
+    max-height: 70vh;
+    object-fit: contain;
+    animation: rotate-slow 20s linear infinite;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+@keyframes text-slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate-slow {
+    0% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}

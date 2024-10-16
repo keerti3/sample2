@@ -17,6 +17,7 @@ body {
     width: 100%; /* Use the full width of the viewport */
     max-width: 100%; /* Ensure content fits within the viewport */
     position: relative;
+    overflow: visible; 
 }
 
 .venus-image {
