@@ -19,7 +19,7 @@ body {
     max-width: 400px;
     padding: 20px;
     opacity: 0;
-    animation: text-slide-in 2s ease-in-out 2s forwards;
+    animation: text-slide-in 1s ease-in-out 1s forwards;
     transform: translateY(-100%);
 }
 
